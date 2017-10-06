@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--As DOCTYPE either the strict XHTML declaration or "-//HbbTV//1.1.1//EN" "http://www.hbbtv.org/dtd/HbbTV-1.1.1.dtd" shall be used as described in the HbbTV-standard: A.2.6.2.-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--Required XML-namespace as described in the HbbTV-standard: A.2.6.2.-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--Required MIME content type as described in the HbbTV-standard: A.2.6.2.-->
+    <meta http-equiv="Content-Type" content="application/vnd.hbbtv.xml+xhtml; utf-8" />
+    <script type="text/javascript" src="/js/keycodes.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Hello World HbbTV Application</title>
+</head>
+
+<body onload="initApp();">
+    <div>
+        <!--ApplicationManager extracts information out of the AIT (such as lifecycle, autostart, etc.)-->
+        <object style="width:0; height:0; position: absolute;" id="appMan" type="application/oipfApplicationManager"></object>
+    </div>
+
+    <div class="safe_area" id="app_area">
+        <ul id="nav">
+            <li class="selected">Start</li>
+            <li>Development Toolchain</li>
+            <li>Key Areas</li>
+            <li>Offer</li>
+            <li>Our Customers</li>
+            <li><em>[NEW]</em> Extended Debugging</li>
+        </ul>
+        
+        <div id="start" class="page">
+            <h1>SauceLabs brings automated testing to Smart TVs!</h1>
+            <img src="/img/appium-hbbtv-driver.png" alt="">
+        </div>
+        
+        <div id="toolchain" class="page">
+            <h1>THE MODERN DEVELOPMENT TOOL CHAIN</h1>
+            <h2>CI/CD REQUIRES CONTINUOUS TESTING</h2>
+            <img src="/img/toolchain.png" alt="Toolchain">
+        </div>
+        
+        <div id="keyareas" class="page">
+            <h1>SAUCE LABS REVOLUTIONIZES TESTING</h1>
+            <h2>PROVIDING BUSINESS VALUE IN THREE KEY AREAS</h2>
+            <img src="/img/keyareas.png" alt="Key Areas">
+        </div>
+        
+        <div id="offer" class="page">
+            <h1>SAUCE LABS OFFERINGS</h1>
+            <h3>The industry’s only cloud-based testing platform for both web and mobile applications that spans desktops, simulators, emulators and real devices.</h3>
+            <img src="/img/offer.png" alt="Offering">
+        </div>
+        
+        <div id="customers" class="page opened">
+            <h1>BROAD ADOPTION ACROSS VERTICALS </h1>
+            <h2>Increase velocity, improve quality &amp; reduce cost with Sauce Labs</h2>
+            <img src="/img/customers.png" alt="Customers">
+        </div>
+        
+        <div id="debugging" class="page opened">
+            <h1>NEW: Extended Debugging</h1>
+            <button class="play">Play</button>
+        </div>
+    </div>
+    
+    <div id="indicator">
+        <h1>HbbTV</h1>
+    </div>
+</body>
+</html>

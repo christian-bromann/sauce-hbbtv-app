@@ -1,0 +1,230 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* most backgrounds are transparent, but there is at least one terminal which has a white color as the default background*/
+    background-color: transparent;
+    /*we explicitly set the size of the body element. This avoids a browser to show scroll bars or that pages are floating if they are bigger than the logical screen size */
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+}
+
+/* set application area invisble as initial state */
+div#app_area {
+    visibility: hidden;
+    background: url('/img/background.jpeg') bottom right no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+}
+
+div.safe_area {
+    position: absolute;
+    /* Border of the safe area: 10% 5% 80% 90 */
+    
+    left: 128px;
+    top: 36px;
+    width: 1024px;
+    height: 648px;
+}
+
+#indicator {
+    width: 160px;
+    height: 35px;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background: url('/img/sauce-labs.png') no-repeat 10px rgba(50, 20, 50, 0.3);
+    background-size: 40px;
+    padding: 10px 10px 10px 70px;
+    border-radius: 5px;
+
+}
+#indicator h1 {
+    position: relative;
+    color: #222;
+    text-align: left;
+}
+
+#indicator h1:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    content: "";
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    background: red;
+}
+
+#nav {
+    border: 2px solid red;
+    position: absolute;
+    left: 5%;
+    top: 8%;
+}
+
+#nav li {
+    width: 250px;
+    display: block;
+    padding: 10px;
+    color: red;
+    font-size: 18px;
+    border-bottom: rgba(255, 0, 0, 0.5) solid 1px;
+}
+
+#nav li.selected {
+    background: white;
+}
+
+#nav li:last-Child {
+    border-bottom: 0;
+}
+
+.page {
+    width: 480px;
+    /*border: 1px solid green;*/
+    height: 410px;
+    position: absolute;
+    top: 8%;
+    left: 40%;
+    padding: 30px;
+    background: white;
+    display: none;
+}
+
+.page img {
+    width: 100%;
+}
+
+.page video {
+    position: absolute;
+    top: 85px;
+    width: 480px;
+    height: 300px;
+    pointer-events: none;
+}
+
+.page.opened {
+    display: block;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+}
+
+h2 {
+    color: #9fa4ae;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: 100;
+}
+
+h3 {
+    margin: 30px 0;
+}
+
+#start h1 {
+    padding-top: 100px;
+}
+
+#start img {
+    width: 100%
+}
+
+.play {
+    width: 100px;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    margin: 0 0 0 -35px;
+    bottom: 30px;
+    color: white;
+    background: red;
+    padding: 10px 20px;
+    border: 0;
+    text-transform: uppercase;
+}
+
+a {
+    /* According to the OIPF DAE specification this shall prevent that a browser draws its default highlighting */
+    outline-style: none;
+    text-decoration: none;
+}
+
+#info_field {
+    background-color: #FFFFFF;
+    color: #000000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    font-size: 12px;
+    text-align: left;
+    padding: 8px;
+    border: solid 1px #000000;
+}
+
+#background_plane {
+    position: absolute;
+    /* Border of the safe area: 10% 5% 80% 90% */
+    
+    left: 0px;
+    top: 0px;
+    width: 1024px;
+    height: 648px;
+    background: white;
+    opacity: .80;
+}
+
+#header_field {
+    position: relative;
+    width: 50%;
+    margin-top: 130px;
+    left: 50%;
+    margin-left: -25%;
+    padding: 20px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    background: rgba(0, 0, 255, 0.4);
+}
+
+#content_field {
+    position: relative;
+    width: 50%;
+    margin-top: 30px;
+    left: 50%;
+    margin-left: -25%;
+    padding: 20px;
+    text-align: left;
+    font-size: 20px;
+    color: white;
+    background: rgba(0, 0, 255, 0.4);
+}
+
+#logo_field {
+    position: relative;
+    width: 50%;
+    margin-top: 30px;
+    left: 50%;
+    margin-left: -25%;
+    text-align: center;
+}
+
+#tvring_logo {
+    position: relative;
+    height: 40px;
+}
+
+#irt_logo {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
