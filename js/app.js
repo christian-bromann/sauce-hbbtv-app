@@ -7,6 +7,7 @@ var app_area;
 var indicator;
 var openedPage = 0
 var appShown = false
+var INDICATOR_TIMEOUT = 2000
 
 function initApp() {
     console.log('Initialize Application');
@@ -24,7 +25,7 @@ function initApp() {
     myKeyset.setValue(0x11);
 
     document.addEventListener("keydown", keyEventHandler, false);
-    setTimeout(hideIndicator, 5000);
+    setTimeout(hideIndicator, INDICATOR_TIMEOUT);
 }
 
 function keyEventHandler (e) {
@@ -91,7 +92,7 @@ function showApp() {
         app_area.style.visibility = "hidden";
         openedPage = 1;
         navigate('up');
-        setTimeout(hideIndicator, 5000);
+        setTimeout(hideIndicator, INDICATOR_TIMEOUT);
     }
 
     appShown = !appShown;
