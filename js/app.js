@@ -8,7 +8,8 @@ var indicator;
 var openedPage = 0
 var appShown = false
 
-function initApp() { 
+function initApp() {
+    console.log('Initialize Application');
     app_area = document.getElementById("app_area");
     indicator = document.getElementById("indicator");
 
@@ -17,12 +18,18 @@ function initApp() { 
     var application_manager = document.getElementById("appMan");
     var Application = application_manager.getOwnerApplication(document)
     Application.show();
-    appShown = true;
-    
-    document.addEventListener("keydown", function (e) {
-        console.log('KeyEvent:', e.keyCode);
-		if(handleKeyCode(e.keyCode)) e.preventDefault();
-	}, false);
+    console.log('Application shown');
+
+    var myKeyset = Application.privateData.keyset;
+    myKeyset.setValue(0x11);
+
+    document.addEventListener("keydown", keyEventHandler, false);
+    setTimeout(hideIndicator, 5000);
+}
+
+function keyEventHandler (e) {
+    console.log('KeyEvent:', e.keyCode);
+    if(handleKeyCode(e.keyCode)) e.preventDefault();
 }
 
 function navigate (dir) {
@@ -71,7 +78,21 @@ function handleKeyCode(kc) {
     }
 }
 
-function showApp() {
+function hideIndicator() {
     indicator.style.visibility = "hidden";
-    app_area.style.visibility = "visible";
+}
+
+function showApp() {
+    if (!appShown) {
+        hideIndicator();
+        app_area.style.visibility = "visible";
+    } else {
+        indicator.style.visibility = "visible";
+        app_area.style.visibility = "hidden";
+        openedPage = 1;
+        navigate('up');
+        setTimeout(hideIndicator, 5000);
+    }
+
+    appShown = !appShown;
 }
