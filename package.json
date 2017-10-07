@@ -1,0 +1,26 @@
+{
+  "name": "sauce-hbbtv-app",
+  "version": "0.0.1",
+  "description": "An HbbTV application for SauceLabs",
+  "main": "index.html",
+  "scripts": {
+    "test": "wdio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christian-bromann/sauce-hbbtv-app.git"
+  },
+  "author": "Christian Bromann <christian@saucelabs.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/christian-bromann/sauce-hbbtv-app/issues"
+  },
+  "homepage": "https://github.com/christian-bromann/sauce-hbbtv-app#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "wdio-mocha-framework": "^0.5.11",
+    "wdio-spec-reporter": "^0.1.2",
+    "webdriverio": "^4.8.0"
+  }
+}
